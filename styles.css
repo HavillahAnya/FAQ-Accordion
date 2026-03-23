@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --bg-color-1: hsl(275, 100%, 97%);
+  --bg-color-2: hsl(0, 100%, 100%);
+
+  --text-color-1: hsl(292, 42%, 14%);
+  --text-color-2: hsl(292, 16%, 49%);
+  --color: hsl(293, 16%, 49%);
+  --accent-color: oklch(49.6% 0.265 301.924);
+
+  --text-normal-size: 1.6rem;
+
+  --font: "Work Sans", sans-serif;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 600;
+  --font-weight-bold: 700;
+
+  --bg-img-mobile: url("./assets/images/background-pattern-mobile.svg");
+  --bg-img-desktop: url("./assets/images/background-pattern-desktop.svg");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font);
+  font-size: var(--text-normal-size);
+  font-weight: var(--font-weight-normal);
+
+  background-color: var(--bg-color-1);
+  background-image: var(--bg-img-mobile);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: top;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+}
+
+.accordion {
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 2rem;
+  padding: 2rem;
+  border-radius: 6px;
+  background-color: var(--bg-color-2);
+  box-shadow: 0px 20px 20px hsla(293, 16%, 49%, 0.144);
+}
+
+.accordion__main-header {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.star-icon {
+  width: 2.2rem;
+}
+
+.accordion__main-title {
+  column-rule: var(--text-color-1);
+  font-size: 2.8rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.accordion__content {
+  border-bottom: 2px solid hsla(293, 16%, 49%, 0.144);
+  overflow: hidden;
+  transition: all 0.2s linear;
+}
+
+.accordion__content:hover span {
+  color: var(--accent-color);
+}
+
+.accordion__content.open {
+  padding-bottom: 1.5rem;
+}
+
+.accordion__content:last-child {
+  border: none;
+}
+
+.accordion__content-header {
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+.accordion__content-title {
+  font-weight: var(--font-weight-medium);
+  width: 80%;
+}
+
+.accordion__content-icon {
+  width: 2.8rem;
+  height: 2.8rem;
+}
+
+.plus-icon {
+  background-image: url("./assets/images/icon-plus.svg");
+}
+
+.minus-icon {
+  background-image: url("./assets/images/icon-minus.svg");
+}
+
+.accordion__content-text {
+  line-height: 2rem;
+  color: var(--text-color-2);
+  height: 0;
+  transition: all 0.2s linear;
+}
+
+@media (min-width: 800px) {
+  body {
+    background-image: var(--bg-img-desktop);
+  }
+}
